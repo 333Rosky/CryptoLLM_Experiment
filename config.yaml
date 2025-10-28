@@ -1,0 +1,52 @@
+universe:
+  symbols:
+    - BTC/USDT
+    - ETH/USDT
+    - SOL/USDT
+    - AVAX/USDT
+    - MATIC/USDT
+    - LINK/USDT
+    - ARB/USDT
+    - OP/USDT
+    - AAVE/USDT
+    - UNI/USDT
+    - USDC/USDT
+  base_currency: USDT
+data:
+  exchange: binance
+  source: ccxt
+  timeframe: 1d
+  lookback_days: 90
+  fetch_full_history: true
+  fallback_source: yfinance
+  cache_path: data/market_latest.parquet
+signals:
+  rsi_window: 14
+  volatility_window_days: 30
+  return_windows_days: [7, 30]
+llm:
+  provider: openai
+  model: gpt-4o-mini
+  temperature: 0.1
+  max_tokens: 800
+  timeout_seconds: 45
+  allocation_prompt: |
+    You are an institutional crypto portfolio manager. Given the metrics, produce an allocation for the $BUDGET budget across the listed symbols.
+    Return strict JSON with keys: "allocations" (dict of symbol->weight between 0 and 1) and "rationale" (string under 500 chars).
+risk:
+  max_weight_per_asset: 0.25
+  min_assets_held: 4
+  stablecoin_floor_if_high_vol: 0.15
+  high_vol_threshold: 0.08
+  max_daily_turnover: 0.35
+portfolio:
+  initial_nav: 10000
+  allocations_path: logs/allocations.parquet
+  nav_path: logs/nav.parquet
+  report_path: reports/latest.md
+reports:
+  figure_path: reports/equity.png
+  metrics_path: reports/metrics.json
+logging:
+  enable_console: true
+  level: INFO

@@ -1,0 +1,77 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "crypto-research"
+version = "0.1.0"
+description = "Crypto research and strategy engine."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+  {name = "333Rosky"},
+]
+dependencies = [
+  "ccxt>=4.3,<5.0",
+  "matplotlib>=3.9",
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "pyarrow>=16.1",
+  "pydantic>=2.7",
+  "pydantic-settings>=2.2",
+  "pyyaml>=6.0",
+  "requests>=2.31",
+  "rich>=13.7",
+  "typer>=0.12",
+  "yfinance>=0.2",
+]
+
+[project.optional-dependencies]
+api = [
+  "fastapi>=0.111",
+  "uvicorn>=0.30",
+]
+dev = [
+  "black>=24.4",
+  "isort>=5.13",
+  "mypy>=1.9",
+  "pre-commit>=3.7",
+  "pytest>=8.2",
+  "pytest-cov>=5.0",
+  "ruff>=0.4",
+  "types-requests>=2.31",
+  "types-pyyaml>=6.0",
+]
+
+# (optionnel) pas de scripts CLI pour l’instant
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/crypto_research"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.11"
+plugins = ["pydantic.mypy"]
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers --strict-config --cov=crypto_research --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "I", "B", "UP", "N"]
+ignore = ["B008"]
+
+[tool.ruff.isort]
+known-first-party = ["crypto_research"]

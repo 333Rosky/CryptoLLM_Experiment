@@ -1,0 +1,79 @@
+[
+  {
+    "symbol": "AAVE/USDT",
+    "return_7d": -0.0173,
+    "return_30d": 0.3652,
+    "volatility_30d": 0.0,
+    "rsi_14": 58.4397
+  },
+  {
+    "symbol": "ARB/USDT",
+    "return_7d": 0.0903,
+    "return_30d": -0.2134,
+    "volatility_30d": 1.2894,
+    "rsi_14": 42.6694
+  },
+  {
+    "symbol": "AVAX/USDT",
+    "return_7d": -0.0156,
+    "return_30d": -0.2249,
+    "volatility_30d": 0.0,
+    "rsi_14": 29.0064
+  },
+  {
+    "symbol": "BTC/USDT",
+    "return_7d": -0.0363,
+    "return_30d": 0.2885,
+    "volatility_30d": 0.0,
+    "rsi_14": 56.0337
+  },
+  {
+    "symbol": "ETH/USDT",
+    "return_7d": -0.0463,
+    "return_30d": 0.2142,
+    "volatility_30d": 0.0,
+    "rsi_14": 48.3391
+  },
+  {
+    "symbol": "LINK/USDT",
+    "return_7d": -0.0738,
+    "return_30d": -0.1428,
+    "volatility_30d": 0.0,
+    "rsi_14": 46.9736
+  },
+  {
+    "symbol": "MATIC/USDT",
+    "return_7d": -0.1038,
+    "return_30d": -0.1442,
+    "volatility_30d": 0.0,
+    "rsi_14": 41.1938
+  },
+  {
+    "symbol": "OP/USDT",
+    "return_7d": -0.0772,
+    "return_30d": -0.3572,
+    "volatility_30d": 0.0,
+    "rsi_14": 36.8382
+  },
+  {
+    "symbol": "SOL/USDT",
+    "return_7d": -0.0137,
+    "return_30d": 0.0808,
+    "volatility_30d": 0.0,
+    "rsi_14": 46.5507
+  },
+  {
+    "symbol": "UNI/USDT",
+    "return_7d": -0.0578,
+    "return_30d": -0.162,
+    "volatility_30d": 0.0,
+    "rsi_14": 33.2767
+  },
+  {
+    "symbol": "USDC/USDT",
+    "return_7d": 0.0002,
+    "return_30d": 0.0004,
+    "volatility_30d": 0.0,
+    "rsi_14": 52.549
+  }
+]
